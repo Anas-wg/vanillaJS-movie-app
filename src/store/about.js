@@ -6,5 +6,5 @@ export default new Store({
   email:'wg12181218@gmail.com',
   blog: 'https://blog.naver.com/false90',
   github:"https://github.com/Anas-wg",
-  repository: "https://github.com/Anas-wg"
+  repository: "https://github.com/Anas-wg/vanillaJS-movie-app"
 })

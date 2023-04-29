@@ -22,7 +22,13 @@ export const searchMovies = async page => {
   }
   // parameter 로 s, page 사용
   try {
-    const res = await fetch(`https://www.omdbapi.com/?apikey=e468a5ae&s=${store.state.searchText}&page=${page}`)
+    const res = await fetch('/api/movie',{
+      method: 'POST',
+      body: JSON.stringify({
+          title:store.state.searchText,
+          page
+        })
+    })
     const { Search, totalResults, Response, Error } = await res.json()
     if (Response === 'True') {
       store.state.movies = [
@@ -43,7 +49,12 @@ export const searchMovies = async page => {
 
 export const getMovieDetails = async id => {
   try{
-    const res = await fetch(`https://www.omdbapi.com/?apikey=e468a5ae&i=${id}&plot=full`)
+    const res = await fetch('/api/movie',{
+      method: 'POST',
+      body: JSON.stringify({
+        id
+      })
+    })
     store.state.movie = await res.json()
   } catch (error) {
     console.log('getMovieDetails error:', error)

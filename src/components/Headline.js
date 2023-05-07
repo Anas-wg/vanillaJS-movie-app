@@ -2,7 +2,9 @@ import { Component } from "../core/heropy";
 
 export default class Headline extends Component {
   render() {
+    // headline 자신에 클래스 추가
     this.el.classList.add('headline')
+    // headline 자신 객체를 html에 할당
     this.el.innerHTML = /* html */`
       <h1>
         <span>OMDB API</span><Br>

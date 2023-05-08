@@ -32,9 +32,10 @@ export default class MovieList extends Component {
         }).el
       )
     )
+    // 타입 단언 -> 오타 에러 잡기 힘듦  따라서 선택적 체이닝 활용
     const loaderEl = this.el.querySelector('.the-loader')
     movieStore.state.loading 
-      ? loaderEl.classList.remove('hide') 
-      : loaderEl.classList.add('hide')
+      ? loaderEl?.classList.remove('hide') 
+      : loaderEl?.classList.add('hide')
   }
 }

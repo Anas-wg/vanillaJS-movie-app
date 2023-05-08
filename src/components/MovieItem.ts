@@ -1,7 +1,15 @@
 import { Component } from "../core/heropy";
+import { SimpleMovie } from "../store/movie"
+
+interface Props {
+  [key: string]: unknown
+  movie: SimpleMovie
+}
 
 export default class MovieItem extends Component {
-  constructor(props) {
+  // 할당 단언
+  public props!: Props
+  constructor(props: Props) {
     // props 를 인수로 받고, super 키워드로 MovieItem 만의 props 와 tagName 사용
     // 이를 통해 a 태그 생성
     super({
